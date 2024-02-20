@@ -2,6 +2,7 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:helloworld/Home.dart';
+import 'package:helloworld/message.dart';
 
 void SearchApp() {
   runApp(new Search());

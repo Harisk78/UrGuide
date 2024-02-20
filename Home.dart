@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/Search.dart';
+import 'package:helloworld/location.dart';
+import 'package:helloworld/message.dart';
 
 void main() {
   runApp(new MaterialApp(home: new Home(), debugShowCheckedModeBanner: false));
@@ -27,7 +30,7 @@ class _MyAppState extends State<Home> {
         ),
         backgroundColor: (Color(0xbff6372a)),
         actions: [
-          IconButton(onPressed: () => {}, icon: Icon(Icons.messenger_rounded))
+          IconButton(onPressed: () => {Navigator.push(context,MaterialPageRoute(builder:(context)=>Messager()))}, icon: Icon(Icons.messenger_rounded))
         ],
       ),
       drawer: Drawer(
@@ -125,13 +128,21 @@ class _MyAppState extends State<Home> {
                   size: 30.0,
                 )),
             IconButton(
-                onPressed: () => {}, icon: Icon(Icons.search, size: 30.0)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Search()));
+                },
+                icon: Icon(Icons.search, size: 30.0)),
             IconButton(
-                onPressed: () => {}, icon: Icon(Icons.location_on, size: 30.0)),
+                onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => location()));
+                }, 
+                icon: Icon(Icons.location_on, size: 30.0)),
             IconButton(
-                onPressed: () => {}, icon: Icon(Icons.more_horiz, size: 30.0))
+                onPressed: () => {}, icon: Icon(Icons.more_vert, size: 30.0))
           ],
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
         ),
       ),
     );

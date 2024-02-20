@@ -1,7 +1,6 @@
 import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'Home.dart';
 
 void main() {
   return runApp(new Messager());
@@ -23,7 +22,7 @@ class _MessagerState extends State<Messager> {
           onPressed: () => {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MyApp()),
+              MaterialPageRoute(builder: (context) => const Home()),
             )
           },
           icon: Icon(Icons.home),

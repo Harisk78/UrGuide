@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
-import 'message.dart';
+import 'package:helloworld/Home.dart';
+import 'package:helloworld/Search.dart';
 
 void main() {
   return runApp(new location());
@@ -34,19 +34,22 @@ class _locationState extends State<location> {
               onPressed: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyApp()),
+                  MaterialPageRoute(builder: (context) => const Home()),
                 )
               },
               icon: Icon(Icons.home, size: 30.0),
               hoverColor: Colors.white,
             ),
             IconButton(
-              onPressed: () => {},
+              onPressed: (){
+                Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Search()));
+              },
               icon: Icon(Icons.search, size: 30.0),
               hoverColor: Colors.white,
             ),
             IconButton(
-              onPressed: () => {},
+              onPressed: ()=>{},
               icon: Icon(Icons.location_on, size: 30.0),
               hoverColor: Colors.white,
             ),
