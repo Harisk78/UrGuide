@@ -105,6 +105,21 @@ class _MyAppState extends State<Home> {
             color: Colors.white,
           ),
           ListTile(
+            title: Text("Notifications",
+                style: TextStyle(
+                  color: Color(0xffffffff),
+                  fontSize: 16.0,
+                )),
+            leading: Icon(
+              Icons.notifications_active,
+              color: Colors.white,
+            ),
+          ),
+          Divider(
+            height: 0.7,
+            color: Colors.white,
+          ),
+          ListTile(
             title: Text("Help",
                 style: TextStyle(
                   color: Color(0xffffffff),
@@ -112,6 +127,21 @@ class _MyAppState extends State<Home> {
                 )),
             leading: Icon(
               Icons.keyboard_command_key_rounded,
+              color: Colors.white,
+            ),
+          ),
+          Divider(
+            height: 0.7,
+            color: Colors.white,
+          ),
+          ListTile(
+            title: Text("Sign out",
+                style: TextStyle(
+                  color: Color(0xffffffff),
+                  fontSize: 16.0,
+                )),
+            leading: Icon(
+              Icons.logout_rounded,
               color: Colors.white,
             ),
           ),
