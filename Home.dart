@@ -30,7 +30,12 @@ class _MyAppState extends State<Home> {
         ),
         backgroundColor: (Color(0xbff6372a)),
         actions: [
-          IconButton(onPressed: () => {Navigator.push(context,MaterialPageRoute(builder:(context)=>Messager()))}, icon: Icon(Icons.messenger_rounded))
+          IconButton(
+              onPressed: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Messager()))
+                  },
+              icon: Icon(Icons.messenger_rounded))
         ],
       ),
       drawer: Drawer(
@@ -134,17 +139,63 @@ class _MyAppState extends State<Home> {
                 },
                 icon: Icon(Icons.search, size: 30.0)),
             IconButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => location()));
-                }, 
+                },
                 icon: Icon(Icons.location_on, size: 30.0)),
-            IconButton(
-                onPressed: () => {}, icon: Icon(Icons.more_vert, size: 30.0))
+            verticalmenu()
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
         ),
       ),
+    );
+  }
+
+  PopupMenuButton<dynamic> verticalmenu() {
+    return PopupMenuButton(
+      itemBuilder: (context) => [
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+              ),
+              title: Text("Settings"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.price_change),
+              title: Text("Premium"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.analytics),
+              title: Text("Analytics"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.contact_support_sharp),
+              title: Text("Contact Us"),
+            ),
+          ],
+        )),
+      ],
+      child: Icon(Icons.more_vert),
+      elevation: 50.0,
     );
   }
 }

@@ -27,8 +27,16 @@ class _MessagerState extends State<Messager> {
           },
           icon: Icon(Icons.home),
         ),
-        title: Text('ChatWithFriends'),
-        backgroundColor: Color(0xb4ff5b4f),
+        title: Text(
+          'ChatWithFriends',
+          style: TextStyle(
+            color: Color(0xff312b2b),
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 22.0,
+          ),
+        ),
+        backgroundColor: (Color(0xbff6372a)),
       ),
       body: Column(
         children: [

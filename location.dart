@@ -18,7 +18,16 @@ class _locationState extends State<location> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Find Friend Near You")),
+        title: Center(
+            child: Text(
+          "Find Friend Near You",
+          style: TextStyle(
+            color: Color(0xff312b2b),
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 22.0,
+          ),
+        )),
         backgroundColor: Color(0xbffd3122),
         automaticallyImplyLeading: false,
       ),
@@ -38,26 +47,19 @@ class _locationState extends State<location> {
                 )
               },
               icon: Icon(Icons.home, size: 30.0),
-              hoverColor: Colors.white,
             ),
             IconButton(
-              onPressed: (){
-                Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Search()));
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Search()));
               },
               icon: Icon(Icons.search, size: 30.0),
-              hoverColor: Colors.white,
-            ),
-            IconButton(
-              onPressed: ()=>{},
-              icon: Icon(Icons.location_on, size: 30.0),
-              hoverColor: Colors.white,
             ),
             IconButton(
               onPressed: () => {},
-              icon: Icon(Icons.more_vert, size: 30.0),
-              hoverColor: Colors.white,
-            )
+              icon: Icon(Icons.location_on, size: 30.0),
+            ),
+            verticalmenu()
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
         ),
@@ -73,6 +75,53 @@ class _locationState extends State<location> {
         hoverColor: Color(0xaff6a9a9),
         foregroundColor: Colors.yellow,
       ),
+    );
+  }
+
+  PopupMenuButton<dynamic> verticalmenu() {
+    return PopupMenuButton(
+      itemBuilder: (context) => [
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+              ),
+              title: Text("Settings"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.price_change),
+              title: Text("Premium"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.analytics),
+              title: Text("Analytics"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.contact_support_sharp),
+              title: Text("Contact Us"),
+            ),
+          ],
+        )),
+      ],
+      child: Icon(Icons.more_vert),
+      elevation: 50.0,
     );
   }
 }

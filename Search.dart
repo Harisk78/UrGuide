@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:helloworld/Home.dart';
 import 'package:helloworld/message.dart';
+import 'package:helloworld/location.dart';
 
 void SearchApp() {
   runApp(new Search());
@@ -55,13 +56,63 @@ class _MyappState extends State<Search> {
             IconButton(
                 onPressed: () => {}, icon: Icon(Icons.search, size: 30.0)),
             IconButton(
-                onPressed: () => {}, icon: Icon(Icons.location_on, size: 30.0)),
-            IconButton(
-                onPressed: () => {}, icon: Icon(Icons.more_vert, size: 30.0))
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => location()));
+                },
+                icon: Icon(Icons.location_on, size: 30.0)),
+            verticalmenu()
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
         ),
       ),
+    );
+  }
+
+  PopupMenuButton<dynamic> verticalmenu() {
+    return PopupMenuButton(
+      itemBuilder: (context) => [
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+              ),
+              title: Text("Settings"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.price_change),
+              title: Text("Premium"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.analytics),
+              title: Text("Analytics"),
+            ),
+          ],
+        )),
+        PopupMenuItem(
+            child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.contact_support_sharp),
+              title: Text("Contact Us"),
+            ),
+          ],
+        )),
+      ],
+      child: Icon(Icons.more_vert),
+      elevation: 50.0,
     );
   }
 }
