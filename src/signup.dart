@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/Login.dart';
+import 'package:helloworld/Home.dart';
 
 void main() => runApp(new MaterialApp(
       home: new Signup(),
@@ -107,7 +109,7 @@ showAlertDialog(BuildContext context) {
     child: Text("OK"),
     onPressed: () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => (Signup())));
+          context, MaterialPageRoute(builder: (context) => (Login())));
     },
   );
 
